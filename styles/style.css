@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+aside {
+  background-color: #282828;
+  padding: 20px;
+  border-radius: 10px;
+}
+@media (max-width: 1200px) {
+  aside {
+    padding: 20px 10px;
+  }
+}
+aside figure {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+aside figure img {
+  width: 40px;
+}
+aside figure span {
+  font-size: 25px;
+  font-weight: bold;
+  color: #1db954;
+}
+@media (max-width: 992px) {
+  aside figure span {
+    display: none;
+  }
+}
+aside nav {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 30px;
+}
+aside nav a {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+}
+@media (max-width: 992px) {
+  aside nav a i {
+    font-size: 20px;
+  }
+}
+@media (max-width: 992px) {
+  aside nav a span {
+    display: none;
+  }
+}
+aside nav a:hover {
+  background-color: #1db954;
+  color: #121212;
+}
+
+main {
+  background-color: #282828;
+  height: 100%;
+  width: 100%;
+}
+main header {
+  display: flex;
+  background-color: #121212;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.78);
+  white-space: nowrap;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+body {
+  background-color: black;
+  color: rgba(255, 255, 255, 0.78);
+  font-family: "Poppins", sans-serif;
+  height: 100vh;
+  padding: 20px;
+}
+
+.layout {
+  height: calc(100vh - 120px);
+  display: flex;
+  gap: 20px;
+}/*# sourceMappingURL=style.css.map */

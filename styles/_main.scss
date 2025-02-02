@@ -1,0 +1,19 @@
+@import "./veriables";
+@import "./mixin";
+
+main {
+  background-color: $grayColor;
+  height: 100%;
+  width: 100%;
+
+  //Header
+
+  header {
+    display: flex;
+    background-color: $blackColor;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+  }
+}
