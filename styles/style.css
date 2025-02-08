@@ -55,9 +55,15 @@ aside nav a:hover {
 }
 
 main {
+  display: flex;
+  flex-direction: column;
   background-color: #282828;
   height: 100%;
   width: 100%;
+  padding: 20px;
+  border-radius: 10px;
+  overflow-y: hidden;
+  overflow-x: auto;
 }
 main header {
   display: flex;
@@ -66,6 +72,124 @@ main header {
   align-items: center;
   padding: 20px;
   border-radius: 10px;
+  gap: 20px;
+}
+main header form {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.221);
+  width: 100%;
+  max-width: 350px;
+  border-radius: 5px;
+  display: flex;
+}
+@media (max-width: 650px) {
+  main header form {
+    max-width: none;
+  }
+}
+main header form input {
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 15px;
+  color: rgba(255, 255, 255, 0.78);
+  width: 100%;
+}
+main header form button {
+  border: none;
+  background: none;
+  color: rgba(255, 255, 255, 0.78);
+  cursor: pointer;
+  margin-right: 10px;
+}
+main header nav {
+  display: flex;
+  gap: 15px;
+}
+@media (max-width: 650px) {
+  main header nav {
+    display: none;
+  }
+}
+main header nav span {
+  font-size: 14px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+main header nav span:hover {
+  color: white;
+}
+main section {
+  flex: 1;
+  margin-top: 20px;
+}
+@media (max-width: 576px) {
+  main section h2 {
+    font-size: 17px;
+  }
+}
+main section .list {
+  position: relative;
+  margin-top: 20px;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+@media (max-width: 768px) {
+  main section .list {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+.card {
+  background: #121212;
+  padding: 10px;
+  border-radius: 10px;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.card:hover .play {
+  bottom: 20px;
+  opacity: 1;
+}
+.card figure {
+  position: relative;
+}
+.card figure img {
+  width: 100%;
+  border-radius: 10px;
+}
+.card figure .play {
+  background-color: #1db954;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  position: absolute;
+  right: 10px;
+  bottom: -20px;
+  transition: all 0.3s;
+  font-size: 23px;
+  opacity: 0;
+}
+.card figure .play:hover {
+  background: #0f6d32;
+  scale: 1.1;
+  rotate: 360deg;
+}
+.card figure i {
+  pointer-events: none;
+}
+.card .card-info {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 * {
@@ -88,10 +212,42 @@ body {
   font-family: "Poppins", sans-serif;
   height: 100vh;
   padding: 20px;
+  overflow: hidden;
 }
 
 .layout {
   height: calc(100vh - 120px);
   display: flex;
   gap: 20px;
+}
+
+/* From Uiverse.io by mrhyddenn */
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 3em;
+  height: 3em;
+  cursor: not-allowed;
+  border-radius: 50%;
+  border: 2px solid #444;
+  box-shadow: -10px -10px 10px #6359f8, 0px -10px 10px 0px #9c32e2, 10px -10px 10px #f36896, 10px 0 10px #ff0b0b, 10px 10px 10px 0px #ff5500, 0 10px 10px 0px #ff9500, -10px 10px 10px 0px #ffb700;
+  animation: rot55 0.7s linear infinite;
+}
+
+.spinnerin {
+  border: 2px solid #444;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes rot55 {
+  to {
+    transform: rotate(360deg);
+  }
 }/*# sourceMappingURL=style.css.map */
