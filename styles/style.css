@@ -192,6 +192,43 @@ main section .list {
   justify-content: space-between;
 }
 
+.player {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.player .info {
+  display: flex;
+  gap: 10px;
+}
+.player .info div h5 {
+  font-size: 18px;
+  font-weight: 500;
+}
+.player .info div p {
+  color: rgb(150, 150, 150);
+}
+.player .info img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+.player audio {
+  width: 40%;
+}
+.player .icons {
+  display: flex;
+  gap: 20px;
+  font-size: 20px;
+  margin-right: 20px;
+}
+@media (max-width: 768px) {
+  .player .icons {
+    display: none;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;

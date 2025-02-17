@@ -1,0 +1,41 @@
+@import "./mixin";
+
+.player {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .info {
+    display: flex;
+    gap: 10px;
+    div {
+      h5 {
+        font-size: 18px;
+        font-weight: 500;
+      }
+      p {
+        color: rgba(150, 150, 150);
+      }
+    }
+    img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+    }
+  }
+
+  audio {
+    width: 40%;
+  }
+
+  .icons {
+    display: flex;
+    gap: 20px;
+    font-size: 20px;
+    margin-right: 20px;
+    @include md {
+      display: none;
+    }
+  }
+}
