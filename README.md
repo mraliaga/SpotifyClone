@@ -1,6 +1,6 @@
 # Şarkıfay - Modern Müzik Arama Uygulaması
 
-![Şarkıfay Demo](./img:gif/gif/Ekran%20Kaydı%202025-02-20%2018.04.05.mov)
+![Şarkıfay Demo](./img:gif/gif/Zight%20Recording%202025-02-20%20at%2006.11.50%20PM.gif)
 
 Şarkıfay, Spotify API'sini kullanarak modern ve kullanıcı dostu bir müzik arama deneyimi sunan web uygulamasıdır.
 
