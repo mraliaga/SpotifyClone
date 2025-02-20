@@ -5,7 +5,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   .info {
     display: flex;
     gap: 10px;
@@ -15,7 +14,7 @@
         font-weight: 500;
       }
       p {
-        color: rgba(150, 150, 150);
+        color: rgb(150, 150, 150);
       }
     }
     img {
@@ -28,7 +27,6 @@
   audio {
     width: 40%;
   }
-
   .icons {
     display: flex;
     gap: 20px;
@@ -38,4 +36,17 @@
       display: none;
     }
   }
+}
+
+@keyframes turn {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate {
+  animation: turn 4s infinite linear;
 }

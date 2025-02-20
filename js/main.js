@@ -1,5 +1,4 @@
 //Api classini import etdik,classin ornegini aldik
-
 import { API } from "./api.js";
 import { UI } from "./ui.js";
 
@@ -9,55 +8,50 @@ const ui = new UI();
 const api = new API();
 
 document.addEventListener("DOMContentLoaded", () => {
-  //Loaderi render et
-  ui.renderLoader();
-  //Api a istek at ve gelen verilerle ekrana kart render et
+  // Logo tıklama olayını ekle
+  const logo = document.querySelector("#logo");
+  logo.addEventListener("click", () => {
+    // Ana sayfaya dön
+    ui.renderCards(null);
+    ui.updateTitle("Popular Music");
+  });
 
-  api
-    .getPopular()
-    .then((data) => ui.renderCards(data))
-    .catch((err) => {
-      console.log("Hataaaa:", err);
-      alert("Uzgunuz h olustui");
-    });
+  // Başlangıçta boş playlist mesajını göster
+  ui.renderCards(null);
 });
 
-//Formun gonderilme olayini izle
-
-ui.form.addEventListener("submit", (e) => {
-  //Form gonderildiginde sayfa yenilemeyi engelle
+//Form submit olayını dinle
+ui.form.addEventListener("submit", async (e) => {
   e.preventDefault();
-  //input daki arama parametresine eris
   const query = e.target[0].value;
-  //aratilan kelime yoksa fonk durdur.Bu sayede api hakkimizi bosa harcamadik.
 
-  if (query.trim() === "")
-    return alert("Lutfen gecerli arama islemi gerceklestiriniz.");
-  //Loaderi render et
-  ui.renderLoader();
+  if (!query.trim()) {
+    return alert("Lütfen geçerli bir arama yapın");
+  }
 
-  //Basligi guncelle
-  ui.updateTitle("results for " + query);
+  try {
+    // Loaderi göster
+    ui.renderLoader();
 
-  //Api ye aratilan kelimeyle istek at
-  api
-    .searchMusic(query)
+    // Başlığı güncelle
+    ui.updateTitle(`"${query}" için sonuçlar`);
 
-    //Gelen sarki verileriyle ekrana kart render et
-    .then((data) => ui.renderCards(data))
-    //Hata varsa yakala ve uyari ver
-    .catch((err) => {
-      alert("Islem Gerceklestirilemedi");
-      console.log(err);
-    });
+    // API'den arama sonuçlarını al
+    const data = await api.searchMusic(query);
+
+    // Sonuçları ekrana bas
+    ui.renderCards(data);
+  } catch (err) {
+    console.log(err);
+    alert("Arama sırasında bir hata oluştu");
+  }
 });
 
-//Liste alaninda gerceklesen tiklanma molay.arini izle
-
+//Liste alanindaki tıklanma olaylarını izle
 ui.list.addEventListener("click", (e) => {
-  console.log("tt");
-  //Eger play classina sahip bir elemana tiklandi ise sarki calma islemini gerceklestir.
-  if (e.target.className === "play") {
-    console.log("Playa tiklandi");
+  if (e.target.closest(".play")) {
+    const card = e.target.closest(".card");
+    const data = card.dataset;
+    ui.renderPlayer(data);
   }
 });

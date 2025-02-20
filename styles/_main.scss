@@ -1,4 +1,4 @@
-@import "./veriables";
+@import "./variables";
 @import "./mixin";
 
 main {
@@ -9,11 +9,10 @@ main {
   width: 100%;
   padding: 20px;
   border-radius: 10px;
-  overflow-y: hidden;
-  overflow-x: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
 
-  //Header
-
+  // Header
   header {
     display: flex;
     background-color: $blackColor;
@@ -54,7 +53,6 @@ main {
       @media (max-width: 650px) {
         display: none;
       }
-
       span {
         font-size: 14px;
         cursor: pointer;
@@ -65,9 +63,7 @@ main {
       }
     }
   }
-
-  //songs
-
+  // Songs
   section {
     flex: 1;
     margin-top: 20px;
@@ -77,8 +73,8 @@ main {
         font-size: 17px;
       }
     }
-    //list
 
+    // List
     .list {
       position: relative;
       margin-top: 20px;
